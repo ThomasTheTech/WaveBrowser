@@ -1,4 +1,3 @@
-Function intro {
     <#
             .SYNOPSIS
                 Remediation script for WaveBrowser Software previously known as WebNavigator.
@@ -16,7 +15,6 @@ Function intro {
                 Removes files associated with Wave Browser Hijacking Software.
                 Removes the scheduled tasks associated with Wave Browser.
         #>
-    }
 
 Function BrowserProcesses {
     "Stopping Browser Sessions"
@@ -55,8 +53,3 @@ Function RemoveRegistryKey {
     Remove-Item -Path HKCU:\Software\WebNavigatorBrowser -Recurse -Force -ErrorAction SilentlyContinue
     Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" -Name "Wavesor SWUpdater" -ErrorAction SilentlyContinue
 }
-
-BrowserProcesses
-RemoveWavesorFS
-RemoveScheduledTasks
-RemoveRegistryKey
